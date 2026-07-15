@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Marketing Research — Saymara B. Ryon &amp; TRE® România | TechNext</title>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Cormorant+Garamond:wght@500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{plum:{'DEFAULT':'#191021','light':'#231631','mid':'#2B1C3B'},rose:{'DEFAULT':'#D9A6C8','light':'#EAC6DE','pale':'#F9EEF5'},blush:{'DEFAULT':'#FBF6F9','dark':'#F5EAF1','deeper':'#EDDCE7'}},fontFamily:{display:['Cormorant Garamond','serif'],body:['Open Sans','system-ui','sans-serif'],alt:['Bebas Neue','cursive','sans-serif']}}}}
+</script>
+<link rel="stylesheet" href="styles.css?v=1"/>
+<style>
+/* ── Page-specific ── */
+.mr-hero{background:linear-gradient(160deg,#140D1B 0%,#1D1228 50%,#191021 100%);min-height:48vh;display:flex;align-items:center;padding:120px 24px 72px;position:relative;overflow:hidden}
+.mr-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 0%,rgba(217,166,200,.10) 0%,transparent 65%);pointer-events:none}
+
+.mr-h{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(2.4rem,5.2vw,4rem);line-height:1.08;letter-spacing:-.01em}
+.mr-eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:700}
+
+/* Stat tiles */
+.stat-tile{background:rgba(255,255,255,.03);border:1px solid rgba(217,166,200,.14);border-radius:14px;padding:22px;text-align:center}
+.stat-tile .n{font-family:'Bebas Neue',cursive;font-size:2.6rem;color:#EAC6DE;line-height:1;display:block}
+.stat-tile .l{font-size:.7rem;color:rgba(255,255,255,.45);letter-spacing:.06em;text-transform:uppercase;margin-top:6px;display:block}
+
+/* Channel presence cards */
+.chan-card{position:relative;background:rgba(255,255,255,.03);border:1px solid rgba(217,166,200,.14);border-radius:16px;padding:22px;transition:transform .4s cubic-bezier(.34,1.4,.64,1),border-color .3s ease,box-shadow .4s ease}
+.chan-card:hover{transform:translateY(-4px);border-color:rgba(217,166,200,.4);box-shadow:0 16px 40px rgba(0,0,0,.32)}
+.chan-ic{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;background:rgba(217,166,200,.08);border:1px solid rgba(217,166,200,.2)}
+.chan-status{position:absolute;top:20px;right:20px;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:4px 9px;border-radius:6px}
+.st-live{color:#8fdcaa;background:rgba(120,200,150,.12);border:1px solid rgba(120,200,150,.32)}
+.st-weak{color:#e7c98a;background:rgba(230,190,90,.10);border:1px solid rgba(230,190,90,.30)}
+.st-none{color:#e79a9a;background:rgba(230,120,120,.10);border:1px solid rgba(230,120,120,.30)}
+.chan-name{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:3px}
+.chan-meta{font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.6}
+.chan-handle{font-size:.72rem;color:#D9A6C8;margin-top:8px;word-break:break-all}
+.brand-tag{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#EAC6DE;margin-bottom:18px}
+.brand-tag::before{content:'';width:26px;height:1px;background:rgba(217,166,200,.5)}
+
+/* Score meter */
+.meter{height:12px;border-radius:8px;background:rgba(255,255,255,.07);overflow:hidden}
+.meter-fill{height:100%;border-radius:8px;background:linear-gradient(90deg,#A2648B,#EAC6DE);width:0;transition:width 1.4s cubic-bezier(.2,.7,.3,1)}
+.in-view .meter-fill{width:var(--w)}
+
+/* Opportunity cards */
+.opp-card{background:rgba(217,166,200,.04);border:1px solid rgba(217,166,200,.16);border-radius:16px;padding:26px;transition:transform .4s cubic-bezier(.34,1.4,.64,1),box-shadow .4s ease,border-color .3s ease}
+.opp-card:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(0,0,0,.3);border-color:rgba(217,166,200,.4)}
+.opp-num{font-family:'Bebas Neue',cursive;font-size:2.6rem;color:rgba(217,166,200,.25);line-height:1}
+
+/* Fact row */
+.fact-row{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid rgba(217,166,200,.08)}
+.fact-row:last-child{border-bottom:none}
+.fact-k{font-size:.82rem;color:rgba(255,255,255,.5);flex-shrink:0}
+.fact-v{font-size:.86rem;color:#fff;text-align:right;font-weight:500}
+
+.src{display:inline-block;font-size:.68rem;color:rgba(217,166,200,.6);border:1px solid rgba(217,166,200,.18);border-radius:4px;padding:2px 7px;margin-left:4px;vertical-align:middle}
+.callout{background:linear-gradient(135deg,rgba(217,166,200,.08),rgba(217,166,200,.03));border-left:3px solid #D9A6C8;border-radius:0 12px 12px 0;padding:16px 22px;margin:24px 0}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:6px 14px;border-radius:99px;margin:0 6px 8px 0;border:1px solid rgba(217,166,200,.30)}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div id="cursor-glow"></div>
+<button id="toTop" aria-label="Back to top"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg></button>
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4" id="nav" style="background:rgba(25,16,33,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(217,166,200,.18)">
+  <div class="max-w-6xl mx-auto flex items-center justify-between relative">
+    <a href="https://saymararyon.com" target="_blank" rel="noopener" class="brand-mark">
+      <span class="logo-a">Saymara B. Ryon</span><span class="logo-x">×</span><span class="logo-b">TRE® România</span>
+    </a>
+    <div id="navLinks" class="flex items-center gap-4 md:gap-8">
+      <a href="index.html" class="nav-page">Showcase</a>
+      <a href="market-research.html" class="nav-page nav-current">Marketing Research</a>
+    </div>
+    <button id="navToggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="mr-hero">
+  <div class="grid-field" style="opacity:.1"></div>
+  <div class="max-w-5xl mx-auto w-full relative z-10">
+    <div class="hero-badge-pill reveal" style="margin-bottom:20px">
+      <span class="badge-dot"></span>
+      Marketing Research · Digital Audit · July 2026
+    </div>
+    <h1 class="text-white mr-h mb-5 reveal">
+      Two Brands' Digital Presence,<br>
+      <em class="not-italic orange-anim">Audited</em>
+    </h1>
+    <p class="text-white/60 max-w-2xl reveal" style="font-size:1.1rem;line-height:1.8">
+      A ground-truth look at where Saymara B. Ryon and Asociația TRE® România actually show up online today — websites, social channels and communities — and the gap between a thriving real-world practice and its digital footprint.
+    </p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 reveal">
+      <div class="stat-tile"><span class="n">2.8K</span><span class="l">Largest Audience · Saymara FB</span></div>
+      <div class="stat-tile"><span class="n" data-count="1064">1,064</span><span class="l">TRE® Group Members</span></div>
+      <div class="stat-tile"><span class="n">~6.5K</span><span class="l">Combined Social Reach</span></div>
+      <div class="stat-tile"><span class="n" data-count="6" data-suffix="+">6+</span><span class="l">Broken Links &amp; Dead Handles</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 CURRENT FOOTPRINT -->
+<section id="footprint" class="py-24 px-6" style="background:#191021">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="label-ornament mr-eyebrow mb-4" style="color:#EAC6DE">01 · Current Digital Footprint</p>
+      <h2 class="text-white mr-h mb-4" style="font-size:clamp(1.8rem,3.5vw,2.8rem)">Where Both Brands Show Up Today</h2>
+      <div class="orange-bar mx-auto mb-5"></div>
+      <p class="text-white/55 max-w-2xl mx-auto" style="font-size:1rem">Real audiences exist on both sides — but they're fragmented across old and new brand names, dead links, and channels nobody owns. The rebrand to "Saymara B. Ryon" left plumbing behind it broken.</p>
+    </div>
+
+    <!-- Brand A: Saymara -->
+    <p class="brand-tag reveal">saymararyon.com — Personal Brand</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+      <!-- Facebook -->
+      <div class="chan-card reveal-s d1">
+        <span class="chan-status st-live">Active · Semi</span>
+        <div class="chan-ic"><svg width="24" height="24" fill="none" stroke="#EAC6DE" stroke-width="1.5" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div>
+        <p class="chan-name">Facebook</p>
+        <p class="chan-meta">2.8K followers — her largest audience. 11 reviews, 100% recommend. Last visible post May 2026; low engagement.</p>
+        <p class="chan-handle">facebook.com/h.m.iuliaioana</p>
+      </div>
+      <!-- TikTok -->
+      <div class="chan-card reveal-s d2">
+        <span class="chan-status st-weak">Old Brand</span>
+        <div class="chan-ic"><svg width="24" height="24" fill="none" stroke="#EAC6DE" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></div>
+        <p class="chan-name">TikTok</p>
+        <p class="chan-meta">~2,223 followers · 115 videos · 7.9K likes — her #2 audience, but still named "H.M. Iulia Ioana", not migrated to the new brand.</p>
+        <p class="chan-handle">@h.m.iuliaioana</p>
+      </div>
+      <!-- Instagram -->
+      <div class="chan-card reveal-s d3">
+        <span class="chan-status st-weak">Active · Tiny</span>
+        <div class="chan-ic"><svg width="24" height="24" fill="none" stroke="#EAC6DE" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="#EAC6DE"/></svg></div>
+        <p class="chan-name">Instagram</p>
+        <p class="chan-meta">233 followers despite 453 posts and weekly reels through July 2026 — huge effort, no distribution. Both websites still link the old, dead handle.</p>
+        <p class="chan-handle">@saymararyon · dead link: @h.m.iuliaioana</p>
+      </div>
+      <!-- LinkedIn -->
+      <div class="chan-card reveal-s d4">
+        <span class="chan-status st-live">Reactivated</span>
+        <div class="chan-ic"><svg width="24" height="24" fill="none" stroke="#EAC6DE" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 17v-7"/></svg></div>
+        <p class="chan-name">LinkedIn</p>
+        <p class="chan-meta">712 followers, 500+ connections. Recently revived with polished English B2B positioning — "Signature Program Mentor". Her strongest-written asset.</p>
+        <p class="chan-handle">linkedin.com/in/iulia-ioana-huiduc-manolescu</p>
+      </div>
+      <!-- YouTube -->
+      <div class="chan-card reveal-s d1">
+        <span class="chan-status st-weak">Dormant</span>
+        <div class="chan-ic"><svg width="24" height="24" fill="none" stroke="#e7c98a" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="#e7c98a" stroke="none"/></svg></div>
+        <p class="chan-name">YouTube</p>
+        <p class="chan-meta">16 subscribers · 32 videos · nothing since Jan 2025. Already rebranded "Saymara B. Ryon" but videos average 5–55 views.</p>
+        <p class="chan-handle">youtube.com/@hmiuliaioana</p>
+      </div>
+      <!-- FB Group -->
+      <div class="chan-card reveal-s d2">
+        <span class="chan-status st-weak">Near-Dormant</span>
+        <div class="chan-ic"><svg width="24" height="24" fill="none" stroke="#e7c98a" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="16.5" cy="9.5" r="2.4"/><path d="M3.5 19c.6-3 2.8-5 5.5-5s4.9 2 5.5 5M14.5 14.6c2.2.3 3.9 1.9 4.5 4.4"/></svg></div>
+        <p class="chan-name">Facebook Group</p>
+        <p class="chan-meta">"Simply Be! The Change" — 234 members, 1 post in the last month, no new members in the last week.</p>
+        <p class="chan-handle">groups/comunitateafacilitatorilordegrupuri</p>
+      </div>
+      <!-- Community funnel -->
+      <div class="chan-card reveal-s d3">
+        <span class="chan-status st-none">Broken</span>
+        <div class="chan-ic"><svg width="24" height="24" fill="none" stroke="#e79a9a" stroke-width="1.5" viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.5.5l2-2a5 5 0 00-7-7l-1 1M14 11a5 5 0 00-7.5-.5l-2 2a5 5 0 007 7l1-1"/><path d="M4 4l16 16" stroke="#e79a9a"/></svg></div>
+        <p class="chan-name">Community &amp; Funnel</p>
+        <p class="chan-meta">Heartbeat community invite dead on both sites ("offer no longer available"); Twitter icon links nowhere; hopp.bio lists no socials at all.</p>
+        <p class="chan-handle" style="color:rgba(231,154,154,.7)">app.heartbeat.chat/simplybe — dead invite</p>
+      </div>
+      <!-- Websites -->
+      <div class="chan-card reveal-s d4">
+        <span class="chan-status st-weak">Split-Brand</span>
+        <div class="chan-ic"><svg width="24" height="24" fill="none" stroke="#e7c98a" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/></svg></div>
+        <p class="chan-name">Websites ×2</p>
+        <p class="chan-meta">saymararyon.com AND the old hmiuliaioana.ro both live in parallel — two identities, mixed RO/EN messaging, one Mailchimp eBook funnel.</p>
+        <p class="chan-handle">saymararyon.com · hmiuliaioana.ro</p>
+      </div>
+    </div>
+
+    <!-- Brand B: TRE Romania -->
+    <p class="brand-tag reveal">treromania.org — Asociația TRE® România</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <!-- FB Group -->
+      <div class="chan-card reveal-s d1">
+        <span class="chan-status st-live">Active · Flat</span>
+        <div class="chan-ic"><svg width="24" height="24" fill="none" stroke="#EAC6DE" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="16.5" cy="9.5" r="2.4"/><path d="M3.5 19c.6-3 2.8-5 5.5-5s4.9 2 5.5 5M14.5 14.6c2.2.3 3.9 1.9 4.5 4.4"/></svg></div>
+        <p class="chan-name">Facebook Group</p>
+        <p class="chan-meta">1,064 members — the biggest owned audience, running since 2016. ~7 posts/month, but growth has plateaued and event RSVPs are minimal.</p>
+        <p class="chan-handle">groups/TREromania</p>
+      </div>
+      <!-- FB Page -->
+      <div class="chan-card reveal-s d2">
+        <span class="chan-status st-live">Active · Low</span>
+        <div class="chan-ic"><svg width="24" height="24" fill="none" stroke="#EAC6DE" stroke-width="1.5" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div>
+        <p class="chan-name">Facebook Page</p>
+        <p class="chan-meta">388 followers, posting into July 2026 (workshop promos) — but engagement is single-digit per post.</p>
+        <p class="chan-handle">facebook.com/asociatiatreromania</p>
+      </div>
+      <!-- Dead FB page -->
+      <div class="chan-card reveal-s d3">
+        <span class="chan-status st-none">Dead Link</span>
+        <div class="chan-ic"><svg width="24" height="24" fill="none" stroke="#e79a9a" stroke-width="1.5" viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.5.5l2-2a5 5 0 00-7-7l-1 1M14 11a5 5 0 00-7.5-.5l-2 2a5 5 0 007 7l1-1"/><path d="M4 4l16 16" stroke="#e79a9a"/></svg></div>
+        <p class="chan-name">Old Facebook Page</p>
+        <p class="chan-meta">The page the website's footer actually links to is gone — "content isn't available". Every visitor clicking Facebook from treromania.org hits a dead end.</p>
+        <p class="chan-handle" style="color:rgba(231,154,154,.7)">facebook.com/TREromania — unavailable</p>
+      </div>
+      <!-- Instagram -->
+      <div class="chan-card reveal-s d4">
+        <span class="chan-status st-weak">Reset · Tiny</span>
+        <div class="chan-ic"><svg width="24" height="24" fill="none" stroke="#e7c98a" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="#e7c98a"/></svg></div>
+        <p class="chan-name">Instagram</p>
+        <p class="chan-meta">186 followers · 35 posts. Evidence of an earlier ~716-follower, 277-post account iteration that was reset — rebuilding from near zero.</p>
+        <p class="chan-handle">@treromania</p>
+      </div>
+      <!-- YouTube -->
+      <div class="chan-card reveal-s d1">
+        <span class="chan-status st-none">Not Owned</span>
+        <div class="chan-ic"><svg width="24" height="24" fill="none" stroke="#e79a9a" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="#e79a9a" stroke="none"/></svg></div>
+        <p class="chan-name">YouTube</p>
+        <p class="chan-meta">The site links to @fionasoma — a dormant personal channel of an international trainer (377 subs, 5 videos, English). No owned Romanian-language channel exists.</p>
+        <p class="chan-handle" style="color:rgba(231,154,154,.7)">youtube.com/@fionasoma — third party</p>
+      </div>
+      <!-- Website -->
+      <div class="chan-card reveal-s d2">
+        <span class="chan-status st-weak">Strong · Stale</span>
+        <div class="chan-ic"><svg width="24" height="24" fill="none" stroke="#e7c98a" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/></svg></div>
+        <p class="chan-name">Website</p>
+        <p class="chan-meta">A real events engine (41 events since 2024, 29-facilitator directory) — but the calendar shows zero upcoming events as of July 2026 and the blog has 3 posts, newest Dec 2024.</p>
+        <p class="chan-handle">treromania.org</p>
+      </div>
+      <!-- LinkedIn -->
+      <div class="chan-card reveal-s d3">
+        <span class="chan-status st-none">Absent</span>
+        <div class="chan-ic"><svg width="24" height="24" fill="none" stroke="#e79a9a" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 17v-7"/></svg></div>
+        <p class="chan-name">LinkedIn</p>
+        <p class="chan-meta">No organisation page — despite corporate wellness being a natural B2B lane for stress-release training in IT-heavy Bucharest.</p>
+        <p class="chan-handle" style="color:rgba(231,154,154,.7)">Not present</p>
+      </div>
+      <!-- TikTok -->
+      <div class="chan-card reveal-s d4">
+        <span class="chan-status st-none">Absent</span>
+        <div class="chan-ic"><svg width="24" height="24" fill="none" stroke="#e79a9a" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></div>
+        <p class="chan-name">TikTok / X / Threads</p>
+        <p class="chan-meta">Zero presence. Somatic &amp; nervous-system content is a proven short-form niche — complete whitespace for the association.</p>
+        <p class="chan-handle" style="color:rgba(231,154,154,.7)">Not present</p>
+      </div>
+    </div>
+
+    <div class="callout reveal mt-10" style="max-width:860px;margin-left:auto;margin-right:auto">
+      <p class="text-white/70 text-sm"><strong style="color:#EAC6DE">Bottom line:</strong> Between them, the two brands reach ~6,500 people — but the biggest audiences sit on old brand names, the websites link to dead pages, and the channels where this content naturally thrives (YouTube, TikTok, LinkedIn for TRE®) are empty or not owned. The practice is real; the plumbing is broken.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 CHANNEL DEEP-DIVE -->
+<section id="channels" class="py-24 px-6" style="background:#FBF6F9">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="label-ornament mr-eyebrow mb-4" style="color:#A2648B">02 · Channel Deep-Dive</p>
+      <h2 class="mr-h mb-4" style="font-size:clamp(1.8rem,3.5vw,2.8rem);color:#191021">The Two Strongest Assets Today</h2>
+      <div class="orange-bar mx-auto mb-5"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      <!-- Saymara strongest -->
+      <div class="reveal-l" style="background:#fff;border:1px solid rgba(25,16,33,.08);border-radius:16px;padding:30px;box-shadow:0 20px 50px rgba(25,16,33,.06)">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-bold text-lg" style="color:#191021">Saymara — Facebook &amp; LinkedIn</h3>
+          <span class="chan-status st-live" style="position:static">Best Reach</span>
+        </div>
+        <p class="text-sm mb-5" style="color:#6E5A69">Facebook holds her largest real audience (2.8K) with perfect reviews, and LinkedIn carries her most compelling story — 15 years as a lawyer turned mentor, with named methods (ReUnity MATRIX®, TRE®, Resonanz®). But posting is irregular, engagement is near zero, and Instagram's 453 posts have earned only 233 followers.</p>
+        <div class="grid grid-cols-3 gap-4 text-center mb-5">
+          <div style="background:#FBF6F9;border:1px solid rgba(25,16,33,.06);border-radius:12px;padding:16px 8px"><div style="font-family:'Bebas Neue',cursive;font-size:1.9rem;color:#A2648B;line-height:1">2.8K</div><p class="text-xs mt-1" style="color:#6E5A69">FB Followers</p></div>
+          <div style="background:#FBF6F9;border:1px solid rgba(25,16,33,.06);border-radius:12px;padding:16px 8px"><div style="font-family:'Bebas Neue',cursive;font-size:1.9rem;color:#A2648B;line-height:1">712</div><p class="text-xs mt-1" style="color:#6E5A69">LinkedIn Followers</p></div>
+          <div style="background:#FBF6F9;border:1px solid rgba(25,16,33,.06);border-radius:12px;padding:16px 8px"><div style="font-family:'Bebas Neue',cursive;font-size:1.9rem;color:#A2648B;line-height:1">453</div><p class="text-xs mt-1" style="color:#6E5A69">IG Posts → 233 Followers</p></div>
+        </div>
+        <div class="space-y-3">
+          <div><div class="flex justify-between text-xs mb-1" style="color:#453245"><span>Audience quality (FB reviews, real reach)</span><span style="color:#A2648B">Strong</span></div><div class="meter" style="background:rgba(25,16,33,.07)"><div class="meter-fill" style="--w:72%"></div></div></div>
+          <div><div class="flex justify-between text-xs mb-1" style="color:#453245"><span>Brand consistency across handles</span><span style="color:#A2648B">Weak · 3 names</span></div><div class="meter" style="background:rgba(25,16,33,.07)"><div class="meter-fill" style="--w:22%"></div></div></div>
+          <div><div class="flex justify-between text-xs mb-1" style="color:#453245"><span>Funnel integrity (links that work)</span><span style="color:#A2648B">Broken</span></div><div class="meter" style="background:rgba(25,16,33,.07)"><div class="meter-fill" style="--w:15%"></div></div></div>
+        </div>
+        <p class="text-xs mt-4" style="color:#A695A2">Follower figures verified July 2026 · Sources: facebook.com/h.m.iuliaioana, LinkedIn, instagram.com/saymararyon</p>
+      </div>
+
+      <!-- TRE strongest -->
+      <div class="reveal-r" style="background:#fff;border:1px solid rgba(25,16,33,.08);border-radius:16px;padding:30px;box-shadow:0 20px 50px rgba(25,16,33,.06)">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-bold text-lg" style="color:#191021">TRE® România — Community &amp; Events</h3>
+          <span class="chan-status st-live" style="position:static">Best Engine</span>
+        </div>
+        <p class="text-sm mb-5" style="color:#6E5A69">The association's real strength is offline: a 1,064-member Facebook group running since 2016, a 29-facilitator national network, ~monthly workshops, free demo sessions, and rare anchors — Dr. David Berceli retreats, a published book, a celebrity-moderated launch. Almost none of it converts into digital growth.</p>
+        <div class="grid grid-cols-3 gap-4 text-center mb-5">
+          <div style="background:#FBF6F9;border:1px solid rgba(25,16,33,.06);border-radius:12px;padding:16px 8px"><div style="font-family:'Bebas Neue',cursive;font-size:1.9rem;color:#A2648B;line-height:1">1,064</div><p class="text-xs mt-1" style="color:#6E5A69">Group Members</p></div>
+          <div style="background:#FBF6F9;border:1px solid rgba(25,16,33,.06);border-radius:12px;padding:16px 8px"><div style="font-family:'Bebas Neue',cursive;font-size:1.9rem;color:#A2648B;line-height:1">41</div><p class="text-xs mt-1" style="color:#6E5A69">Events 2024–26</p></div>
+          <div style="background:#FBF6F9;border:1px solid rgba(25,16,33,.06);border-radius:12px;padding:16px 8px"><div style="font-family:'Bebas Neue',cursive;font-size:1.9rem;color:#A2648B;line-height:1">29</div><p class="text-xs mt-1" style="color:#6E5A69">Facilitators Listed</p></div>
+        </div>
+        <div class="space-y-3">
+          <div><div class="flex justify-between text-xs mb-1" style="color:#453245"><span>Offline programme &amp; credibility</span><span style="color:#A2648B">Excellent</span></div><div class="meter" style="background:rgba(25,16,33,.07)"><div class="meter-fill" style="--w:88%"></div></div></div>
+          <div><div class="flex justify-between text-xs mb-1" style="color:#453245"><span>Digital conversion of that programme</span><span style="color:#A2648B">Weak</span></div><div class="meter" style="background:rgba(25,16,33,.07)"><div class="meter-fill" style="--w:20%"></div></div></div>
+          <div><div class="flex justify-between text-xs mb-1" style="color:#453245"><span>Content freshness (blog · calendar)</span><span style="color:#A2648B">Stale</span></div><div class="meter" style="background:rgba(25,16,33,.07)"><div class="meter-fill" style="--w:18%"></div></div></div>
+        </div>
+        <p class="text-xs mt-4" style="color:#A695A2">Verified July 2026 · Sources: treromania.org, facebook.com/groups/TREromania, facebook.com/asociatiatreromania</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 GAPS & OPPORTUNITIES -->
+<section id="gaps" class="py-24 px-6" style="background:#191021">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="label-ornament mr-eyebrow mb-4" style="color:#EAC6DE">03 · Gaps &amp; Opportunities</p>
+      <h2 class="text-white mr-h mb-4" style="font-size:clamp(1.8rem,3.5vw,2.8rem)">Where the Growth Is</h2>
+      <div class="orange-bar mx-auto mb-5"></div>
+      <p class="text-white/55 max-w-2xl mx-auto" style="font-size:1rem">Most of these gaps are quick, structural fixes — and every one of them compounds the others once the plumbing works.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="opp-card reveal-s d1">
+        <div class="opp-num">01</div>
+        <h3 class="font-bold text-lg mt-2 mb-2" style="color:#fff">Fix the Broken Funnel First</h3>
+        <p class="text-sm" style="color:rgba(255,255,255,.6)">Dead Instagram link on both of Saymara's sites, a dead Facebook page linked from treromania.org, a dead community invite, an empty Twitter icon. Day-one fixes that stop losing every referred visitor.</p>
+      </div>
+      <div class="opp-card reveal-s d2">
+        <div class="opp-num">02</div>
+        <h3 class="font-bold text-lg mt-2 mb-2" style="color:#fff">Unify the Rebrand</h3>
+        <p class="text-sm" style="color:rgba(255,255,255,.6)">Three names live across platforms — Saymara B. Ryon, H.M. Iulia Ioana, and a legacy LinkedIn URL. One handle set, one visual identity, and cross-links between both brands' sites and socials.</p>
+      </div>
+      <div class="opp-card reveal-s d3">
+        <div class="opp-num">03</div>
+        <h3 class="font-bold text-lg mt-2 mb-2" style="color:#fff">Give Instagram a Distribution Strategy</h3>
+        <p class="text-sm" style="color:rgba(255,255,255,.6)">453 posts have earned just 233 followers — the content exists, the reach doesn't. Reels formats, hashtags, collabs with the 29-facilitator network, and cross-brand tagging change that fast.</p>
+      </div>
+      <div class="opp-card reveal-s d4">
+        <div class="opp-num">04</div>
+        <h3 class="font-bold text-lg mt-2 mb-2" style="color:#fff">Own Romanian-Language Video</h3>
+        <p class="text-sm" style="color:rgba(255,255,255,.6)">Saymara's YouTube is dormant and TRE® România's "channel" belongs to a third party. One owned, Romanian-language video program — explaining neurogenic tremor, client stories, workshop clips — fills a niche nobody in Romania owns.</p>
+      </div>
+      <div class="opp-card reveal-s d1">
+        <div class="opp-num">05</div>
+        <h3 class="font-bold text-lg mt-2 mb-2" style="color:#fff">Turn the Events Engine into Content</h3>
+        <p class="text-sm" style="color:rgba(255,255,255,.6)">41 events in two years, Berceli retreats, a book, free demos — and a site calendar that currently shows nothing upcoming. Systematic event cross-posting alone gives both brands a steady content rhythm.</p>
+      </div>
+      <div class="opp-card reveal-s d2">
+        <div class="opp-num">06</div>
+        <h3 class="font-bold text-lg mt-2 mb-2" style="color:#fff">Claim LinkedIn &amp; Corporate Wellness</h3>
+        <p class="text-sm" style="color:rgba(255,255,255,.6)">Saymara's reactivated LinkedIn B2B positioning pairs naturally with a TRE® România organisation page targeting corporate stress-management — an empty, high-value lane in Bucharest's corporate market.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 BRAND SNAPSHOT -->
+<section id="company" class="py-24 px-6" style="background:#FBF6F9">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="label-ornament mr-eyebrow mb-4" style="color:#A2648B">04 · Brand Snapshot</p>
+      <h2 class="mr-h mb-4" style="font-size:clamp(1.8rem,3.5vw,2.8rem);color:#191021">The Practice Behind the Brands</h2>
+      <div class="orange-bar mx-auto mb-5"></div>
+      <p class="max-w-2xl mx-auto" style="color:#5C4A57;font-size:1rem">Verified facts about both brands — the real credentials the digital presence should be showcasing.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8 items-start">
+      <!-- Saymara facts -->
+      <div class="reveal-l" style="background:#fff;border:1px solid rgba(25,16,33,.08);border-radius:16px;padding:30px;box-shadow:0 20px 50px rgba(25,16,33,.06)">
+        <h3 class="font-bold mb-4" style="color:#191021">Saymara B. Ryon — saymararyon.com</h3>
+        <div class="fact-row" style="border-color:rgba(25,16,33,.07)"><span class="fact-k" style="color:#6E5A69">Name</span><span class="fact-v" style="color:#191021">Saymara B. Ryon (H.M. Iulia Ioana)</span></div>
+        <div class="fact-row" style="border-color:rgba(25,16,33,.07)"><span class="fact-k" style="color:#6E5A69">Base</span><span class="fact-v" style="color:#191021">Atelier de Suflet, Sector 3, București</span></div>
+        <div class="fact-row" style="border-color:rgba(25,16,33,.07)"><span class="fact-k" style="color:#6E5A69">Contact</span><span class="fact-v" style="color:#191021">contact@saymararyon.com</span></div>
+        <div class="fact-row" style="border-color:rgba(25,16,33,.07)"><span class="fact-k" style="color:#6E5A69">Background</span><span class="fact-v" style="color:#191021">15 years as a lawyer, full-time practice since 2025</span></div>
+        <div class="fact-row" style="border-color:rgba(25,16,33,.07)"><span class="fact-k" style="color:#6E5A69">Roles</span><span class="fact-v" style="color:#191021">President, Asociația TRE® România · Founder, ReUnity MATRIX®</span></div>
+        <div class="fact-row" style="border-color:rgba(25,16,33,.07)"><span class="fact-k" style="color:#6E5A69">Lives changed</span><span class="fact-v" style="color:#191021">650+ (self-reported)</span></div>
+        <div class="fact-row" style="border-color:rgba(25,16,33,.07)"><span class="fact-k" style="color:#6E5A69">Reviews</span><span class="fact-v" style="color:#191021">11 Facebook reviews · 100% recommend</span></div>
+        <div class="fact-row" style="border-color:rgba(25,16,33,.07)"><span class="fact-k" style="color:#6E5A69">Lead magnet</span><span class="fact-v" style="color:#191021">Free eBook "Eu sunt Eu și e OK!"</span></div>
+        <div class="mt-5">
+          <span class="chip" style="color:#A2648B;border-color:rgba(162,100,139,.35)">ReUnity MATRIX®</span>
+          <span class="chip" style="color:#A2648B;border-color:rgba(162,100,139,.35)">TRE® Advanced</span>
+          <span class="chip" style="color:#A2648B;border-color:rgba(162,100,139,.35)">Resonanz®</span>
+          <span class="chip" style="color:#A2648B;border-color:rgba(162,100,139,.35)">Aspectologie®</span>
+          <span class="chip" style="color:#A2648B;border-color:rgba(162,100,139,.35)">Art Therapy</span>
+        </div>
+        <p class="text-xs mt-4" style="color:#A695A2">Sources: saymararyon.com · LinkedIn · facebook.com/h.m.iuliaioana</p>
+      </div>
+
+      <!-- TRE facts -->
+      <div class="reveal-r" style="background:#fff;border:1px solid rgba(25,16,33,.08);border-radius:16px;padding:30px;box-shadow:0 20px 50px rgba(25,16,33,.06)">
+        <h3 class="font-bold mb-4" style="color:#191021">Asociația TRE® România — treromania.org</h3>
+        <div class="fact-row" style="border-color:rgba(25,16,33,.07)"><span class="fact-k" style="color:#6E5A69">Mission</span><span class="fact-v" style="color:#191021">Promoting TRE® (Tension &amp; Trauma Release Exercises) in Romania</span></div>
+        <div class="fact-row" style="border-color:rgba(25,16,33,.07)"><span class="fact-k" style="color:#6E5A69">Method creator</span><span class="fact-v" style="color:#191021">Dr. David Berceli — direct involvement (2025 retreat &amp; conference)</span></div>
+        <div class="fact-row" style="border-color:rgba(25,16,33,.07)"><span class="fact-k" style="color:#6E5A69">Contact</span><span class="fact-v" style="color:#191021">office@treromania.org · +40 742 064 924</span></div>
+        <div class="fact-row" style="border-color:rgba(25,16,33,.07)"><span class="fact-k" style="color:#6E5A69">Base</span><span class="fact-v" style="color:#191021">Bd. Mărășești 8, Sector 4, București</span></div>
+        <div class="fact-row" style="border-color:rgba(25,16,33,.07)"><span class="fact-k" style="color:#6E5A69">Facilitators</span><span class="fact-v" style="color:#191021">29 listed (4 advanced) across 6+ cities</span></div>
+        <div class="fact-row" style="border-color:rgba(25,16,33,.07)"><span class="fact-k" style="color:#6E5A69">Events</span><span class="fact-v" style="color:#191021">41 events Jun 2024 – Jun 2026 · monthly workshops + free demos</span></div>
+        <div class="fact-row" style="border-color:rgba(25,16,33,.07)"><span class="fact-k" style="color:#6E5A69">Community</span><span class="fact-v" style="color:#191021">Facebook group since 2016 · 1,064 members</span></div>
+        <div class="fact-row" style="border-color:rgba(25,16,33,.07)"><span class="fact-k" style="color:#6E5A69">Anchors</span><span class="fact-v" style="color:#191021">Berceli book launch · Damian Drăghici-moderated event · Bookfest</span></div>
+        <div class="mt-5">
+          <span class="chip" style="color:#A2648B;border-color:rgba(162,100,139,.35)">Trainings</span>
+          <span class="chip" style="color:#A2648B;border-color:rgba(162,100,139,.35)">Workshops</span>
+          <span class="chip" style="color:#A2648B;border-color:rgba(162,100,139,.35)">Free Demos</span>
+          <span class="chip" style="color:#A2648B;border-color:rgba(162,100,139,.35)">Retreats</span>
+          <span class="chip" style="color:#A2648B;border-color:rgba(162,100,139,.35)">Practice Groups</span>
+        </div>
+        <p class="text-xs mt-4" style="color:#A695A2">Sources: treromania.org · facebook.com/asociatiatreromania · facebook.com/groups/TREromania</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 RECOMMENDATION -->
+<section id="plan" class="py-24 px-6 relative" style="background:linear-gradient(160deg,#231631,#191021)">
+  <div class="absolute inset-0 dot-bg opacity-30"></div>
+  <div class="max-w-4xl mx-auto relative z-10">
+    <div class="text-center mb-12 reveal">
+      <p class="label-ornament mr-eyebrow mb-4" style="color:#EAC6DE">05 · Where to Start</p>
+      <h2 class="text-white mr-h mb-4" style="font-size:clamp(1.8rem,3.5vw,2.8rem)">The Priority Moves</h2>
+      <div class="orange-bar mx-auto"></div>
+    </div>
+    <div class="space-y-4 reveal">
+      <div class="flex items-start gap-4 p-5 rounded-2xl" style="background:rgba(255,255,255,.03);border:1px solid rgba(217,166,200,.14)">
+        <span style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:#D9A6C8;flex-shrink:0;line-height:1.2">1</span>
+        <div><p class="font-semibold text-white">Repair every broken link</p><p class="text-sm text-white/55">Fix the dead Instagram link, the dead TRE® Facebook link, the dead community invite and the empty Twitter icon — the cheapest, highest-impact fixes available.</p></div>
+      </div>
+      <div class="flex items-start gap-4 p-5 rounded-2xl" style="background:rgba(255,255,255,.03);border:1px solid rgba(217,166,200,.14)">
+        <span style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:#D9A6C8;flex-shrink:0;line-height:1.2">2</span>
+        <div><p class="font-semibold text-white">Unify handles &amp; cross-link both brands</p><p class="text-sm text-white/55">One name — Saymara B. Ryon — everywhere; TikTok and legacy pages migrated; both websites and every profile pointing to each other.</p></div>
+      </div>
+      <div class="flex items-start gap-4 p-5 rounded-2xl" style="background:rgba(255,255,255,.03);border:1px solid rgba(217,166,200,.14)">
+        <span style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:#D9A6C8;flex-shrink:0;line-height:1.2">3</span>
+        <div><p class="font-semibold text-white">Start a steady two-brand content rhythm</p><p class="text-sm text-white/55">A shared calendar: every workshop and demo cross-posted to page, group, Instagram and LinkedIn — with reels formats that finally give the content distribution.</p></div>
+      </div>
+      <div class="flex items-start gap-4 p-5 rounded-2xl" style="background:rgba(255,255,255,.03);border:1px solid rgba(217,166,200,.14)">
+        <span style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:#D9A6C8;flex-shrink:0;line-height:1.2">4</span>
+        <div><p class="font-semibold text-white">Build the owned video channel + B2B lane</p><p class="text-sm text-white/55">A Romanian-language YouTube/Reels program on TRE® and conscious living, plus a TRE® România LinkedIn page for corporate wellness.</p></div>
+      </div>
+    </div>
+    <p class="text-center text-white/60 mt-10 reveal" style="font-size:1.05rem;line-height:1.8">The practice and the community already exist. The job is to make sure the right people can <span style="color:#EAC6DE">find them online</span> — see the <a href="index.html" style="color:#EAC6DE;text-decoration:underline;text-underline-offset:3px">showcase</a> for what that looks like.</p>
+  </div>
+</section>
+
+<!-- SOURCES & METHODOLOGY -->
+<section id="sources" class="py-16 px-6" style="background:#140D1B">
+  <div class="max-w-4xl mx-auto">
+    <p class="label-ornament mr-eyebrow mb-6 text-center" style="color:rgba(217,166,200,.6)">Sources &amp; Methodology</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <p class="text-white/70 text-sm font-semibold mb-3">How this was compiled</p>
+        <p class="text-white/45 text-xs leading-relaxed mb-3">A multi-source digital audit (July 2026) of both brands' public online presence — websites, social platforms, communities and link-in-bio funnels — using live logged-out page views, site HTML, public feeds and search snippets.</p>
+        <p class="text-white/45 text-xs leading-relaxed">Where platforms block logged-out viewing (Instagram recency, TikTok recency), figures come from public metadata or third-party mirrors and are flagged as approximate.</p>
+      </div>
+      <div>
+        <p class="text-white/70 text-sm font-semibold mb-3">Sources &amp; confidence</p>
+        <ul class="text-white/45 text-xs leading-relaxed space-y-1">
+          <li>• saymararyon.com · hmiuliaioana.ro · treromania.org · Facebook pages &amp; groups · Instagram · LinkedIn · YouTube · hopp.bio</li>
+          <li>• <strong style="color:rgba(234,198,222,.75)">Verified:</strong> follower counts for Facebook (2.8K / 388), groups (234 / 1,064), Instagram (233 / 186), LinkedIn (712), YouTube (16 / 377); dead links; event &amp; facilitator counts.</li>
+          <li>• <strong style="color:rgba(231,201,138,.85)">Approximate — flagged:</strong> TikTok figures (~2.2K, via public API mirror), Instagram posting cadence, "650+ lives changed" (self-reported).</li>
+          <li>• Recommend a manual in-app recheck of TikTok &amp; Instagram before publishing any figures externally.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="app.js?v=1" defer></script>
+</body>
+</html>

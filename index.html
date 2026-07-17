@@ -83,12 +83,10 @@ tailwind.config={theme:{extend:{colors:{navy:{'DEFAULT':'#1c2b3a','body':'#4a556
 @media(max-width:1024px){.site-frame{height:600px}}
 @media(max-width:640px){.site-frame{height:460px}}
 
-/* ── BLACK video placeholder (AI section) ── */
+/* ── AI video card (AI section) ── */
 .vph{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid #E5DDD5;background:#000;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(28,43,58,.12);transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease,border-color .4s ease}
 .vph:hover{border-color:rgba(200,154,24,.6);box-shadow:0 32px 70px rgba(28,43,58,.18)}
-.play-btn{width:64px;height:64px;border-radius:50%;background:rgba(232,184,48,.14);border:2px solid rgba(232,184,48,.6);display:flex;align-items:center;justify-content:center;transition:transform .4s ease,background .4s ease;animation:pulse-ring 2.6s ease-out infinite}
-.vph:hover .play-btn{transform:scale(1.16);background:rgba(232,184,48,.3)}
-.play-btn::before{content:'';border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #E8B830;margin-left:5px}
+.vph video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 @keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(232,184,48,.35)}70%{box-shadow:0 0 0 24px rgba(232,184,48,0)}100%{box-shadow:0 0 0 0 rgba(232,184,48,0)}}
 .ai-badge{position:absolute;top:9px;left:9px;z-index:4;font-size:8px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#fff;background:linear-gradient(135deg,#B5780C,#D4921A);padding:3px 8px;border-radius:5px}
 
@@ -391,19 +389,21 @@ tailwind.config={theme:{extend:{colors:{navy:{'DEFAULT':'#1c2b3a','body':'#4a556
       </div>
     </div>
 
-    <!-- AI-generated videos · 2-column grid · black placeholders -->
+    <!-- AI-generated videos · 2-column grid · 10 real clips -->
     <div class="relative reveal mt-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><div class="play-btn"></div><span class="ph-word">Video · Placeholder</span></div>
-        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><div class="play-btn"></div><span class="ph-word">Video · Placeholder</span></div>
-        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><div class="play-btn"></div><span class="ph-word">Video · Placeholder</span></div>
-        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><div class="play-btn"></div><span class="ph-word">Video · Placeholder</span></div>
-        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><div class="play-btn"></div><span class="ph-word">Video · Placeholder</span></div>
-        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><div class="play-btn"></div><span class="ph-word">Video · Placeholder</span></div>
-        <div class="vph tilt shine"><span class="ai-badge">AI Image</span><div class="play-btn"></div><span class="ph-word">Image · Placeholder</span></div>
-        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><div class="play-btn"></div><span class="ph-word">Video · Placeholder</span></div>
+        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><video src="vid/ai-1.mp4?v=1" poster="vid/ai-1.jpg?v=1" autoplay muted loop playsinline preload="metadata"></video></div>
+        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><video src="vid/ai-2.mp4?v=1" poster="vid/ai-2.jpg?v=1" autoplay muted loop playsinline preload="metadata"></video></div>
+        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><video src="vid/ai-3.mp4?v=1" poster="vid/ai-3.jpg?v=1" autoplay muted loop playsinline preload="metadata"></video></div>
+        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><video src="vid/ai-4.mp4?v=1" poster="vid/ai-4.jpg?v=1" autoplay muted loop playsinline preload="metadata"></video></div>
+        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><video src="vid/ai-5.mp4?v=1" poster="vid/ai-5.jpg?v=1" autoplay muted loop playsinline preload="metadata"></video></div>
+        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><video src="vid/ai-6.mp4?v=1" poster="vid/ai-6.jpg?v=1" autoplay muted loop playsinline preload="metadata"></video></div>
+        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><video src="vid/ai-7.mp4?v=1" poster="vid/ai-7.jpg?v=1" autoplay muted loop playsinline preload="metadata"></video></div>
+        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><video src="vid/ai-8.mp4?v=1" poster="vid/ai-8.jpg?v=1" autoplay muted loop playsinline preload="metadata"></video></div>
+        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><video src="vid/ai-9.mp4?v=1" poster="vid/ai-9.jpg?v=1" autoplay muted loop playsinline preload="metadata"></video></div>
+        <div class="vph tilt shine"><span class="ai-badge">AI Video</span><video src="vid/ai-10.mp4?v=1" poster="vid/ai-10.jpg?v=1" autoplay muted loop playsinline preload="metadata"></video></div>
       </div>
-      <p class="ph-cap">AI-generated concept videos &amp; imagery — coaching, TRE® practice, workshops and retreats</p>
+      <p class="ph-cap">AI-generated concept videos — coaching, TRE® practice, workshops and retreats</p>
     </div>
   </div>
 </section>

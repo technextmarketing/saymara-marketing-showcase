@@ -28,9 +28,10 @@ p,li,td,th{line-height:1.85}
 .reveal.in-view{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}.d6{transition-delay:.48s}
 
-.hero-bg{background:linear-gradient(180deg,#FDFBF6 0%,#FAF7F4 60%,#F7F1E4 100%);position:relative}
+.hero-bg{background:linear-gradient(180deg,#FDFBF6 0%,#FAF7F4 60%,#F7F1E4 100%);position:relative;overflow:hidden}
 .hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 50% -5%,rgba(232,184,48,.18) 0%,transparent 65%);pointer-events:none;z-index:2}
-.hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 50% 45%,transparent 40%,rgba(250,247,244,.5) 100%)}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
+.hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(253,251,246,.62) 0%,rgba(250,247,244,.68) 55%,rgba(247,241,228,.82) 100%),radial-gradient(ellipse 72% 62% at 50% 44%,rgba(250,247,244,.22) 30%,rgba(247,241,228,.6) 100%)}
 .dot-bg{background-image:radial-gradient(circle,rgba(200,154,24,.14) 1px,transparent 1px);background-size:32px 32px}
 
 /* Grid pattern */

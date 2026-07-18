@@ -31,7 +31,7 @@ p,li,td,th{line-height:1.85}
 .hero-bg{background:linear-gradient(180deg,#FDFBF6 0%,#FAF7F4 60%,#F7F1E4 100%);position:relative;overflow:hidden}
 .hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 50% -5%,rgba(232,184,48,.18) 0%,transparent 65%);pointer-events:none;z-index:2}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
-.hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(253,251,246,.62) 0%,rgba(250,247,244,.68) 55%,rgba(247,241,228,.82) 100%),radial-gradient(ellipse 72% 62% at 50% 44%,rgba(250,247,244,.22) 30%,rgba(247,241,228,.6) 100%)}
+.hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(253,251,246,.28) 0%,rgba(250,247,244,.30) 55%,rgba(247,241,228,.48) 100%),radial-gradient(ellipse 60% 52% at 50% 46%,rgba(250,247,244,.34) 0%,rgba(250,247,244,0) 70%)}
 .dot-bg{background-image:radial-gradient(circle,rgba(200,154,24,.14) 1px,transparent 1px);background-size:32px 32px}
 
 /* Grid pattern */

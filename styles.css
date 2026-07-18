@@ -31,7 +31,16 @@ p,li,td,th{line-height:1.85}
 .hero-bg{background:linear-gradient(180deg,#FDFBF6 0%,#FAF7F4 60%,#F7F1E4 100%);position:relative;overflow:hidden}
 .hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 50% -5%,rgba(232,184,48,.18) 0%,transparent 65%);pointer-events:none;z-index:2}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
-.hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(253,251,246,.28) 0%,rgba(250,247,244,.30) 55%,rgba(247,241,228,.48) 100%),radial-gradient(ellipse 60% 52% at 50% 46%,rgba(250,247,244,.34) 0%,rgba(250,247,244,0) 70%)}
+.hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(43,27,58,.34) 0%,rgba(40,26,54,.52) 50%,rgba(33,20,46,.74) 100%),radial-gradient(ellipse 66% 56% at 50% 52%,rgba(40,26,54,.30) 0%,rgba(40,26,54,0) 72%)}
+/* Hero text/controls flipped light for the dark plum video overlay */
+.hero-bg .hero-badge-pill{color:#F0D48A;background:rgba(240,212,138,.14);border-color:rgba(240,212,138,.42)}
+.hero-bg .badge-dot{background:#F0D48A}
+.hero-bg .hero-stat-n{color:#F0D48A}
+.hero-bg .hero-stat-l{color:rgba(255,255,255,.62)}
+.hero-bg .hero-stats-bar{border-top-color:rgba(255,255,255,.16)}
+.hero-bg .hero-stat-item{border-color:rgba(255,255,255,.14)}
+.hero-bg .btn-ow{border-color:rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.08)}
+.hero-bg .btn-ow:hover{border-color:#E8B830;color:#F0D48A;background:rgba(232,184,48,.14)}
 .dot-bg{background-image:radial-gradient(circle,rgba(200,154,24,.14) 1px,transparent 1px);background-size:32px 32px}
 
 /* Grid pattern */
